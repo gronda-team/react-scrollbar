@@ -187,8 +187,10 @@ export default class ScrollArea extends React.Component {
     }
 
     handleTouchMove(e) {
-        e.preventDefault();
-        e.stopPropagation();
+        // Using this to prevent stopping propagation on Safari
+        // Needs improvement to see the angle user is scrolling and decide what to do, let it propagate or scroll the slider
+        // e.preventDefault();
+        // e.stopPropagation();
 
         let {touches} = e;
         if (touches.length === 1) {
